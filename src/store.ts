@@ -26,6 +26,12 @@ export class TodoStoreImpl {
     };
     this.todos.push(item);
   }
+  updateTodo(id: number, title: string) {
+    const index = this.todos.findIndex((item) => item.id === id);
+    if (index > -1) {
+      this.todos[index].title = title;
+    }
+  }
 
   toggleTodo(id: number) {
     const index = this.todos.findIndex((item) => item.id === id);
